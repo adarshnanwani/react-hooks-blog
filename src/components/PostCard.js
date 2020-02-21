@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PostCard = ({ title, author, date, id, image }) => {
   return (
@@ -11,7 +12,9 @@ const PostCard = ({ title, author, date, id, image }) => {
       ></div>
       <div className="card-info">
         <div className="card-title">
-          <p>{title}</p>
+          <Link to={`/posts/${id}`}>
+            <p>{title}</p>
+          </Link>
         </div>
         <div className="card-author-section">
           <p>{author}</p>

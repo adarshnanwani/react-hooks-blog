@@ -1,4 +1,9 @@
-import { SENDING_REQUEST, REQUEST_FINISHED, SET_POSTS } from "./blog.actions";
+import {
+  SENDING_REQUEST,
+  REQUEST_FINISHED,
+  SET_POSTS,
+  SET_POST
+} from "./blog.actions";
 
 export default function blogReducer(state, action) {
   switch (action.type) {
@@ -8,6 +13,8 @@ export default function blogReducer(state, action) {
       return { ...state, loading: false };
     case SET_POSTS:
       return { ...state, blogPosts: action.payload };
+    case SET_POST:
+      return { ...state, currentBlogPost: action.payload };
     default:
       return state;
   }

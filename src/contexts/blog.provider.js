@@ -1,7 +1,12 @@
 import React, { useReducer } from "react";
 import BlogContext from "./blog.context";
 import blogReducer from "./blog.reducer";
-import { SENDING_REQUEST, REQUEST_FINISHED, SET_POSTS } from "./blog.actions";
+import {
+  SENDING_REQUEST,
+  REQUEST_FINISHED,
+  SET_POSTS,
+  SET_POST
+} from "./blog.actions";
 
 const BlogProvider = props => {
   const initialState = {
@@ -24,11 +29,24 @@ const BlogProvider = props => {
     }
   };
 
+  const getPost = async id => {
+    try {
+      dispatch({ type: SENDING_REQUEST });
+      const res = await fetch(`posts/${id}`);
+      const data = await res.json();
+      dispatch({ type: SET_POST, payload: data });
+      dispatch({ type: REQUEST_FINISHED });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <BlogContext.Provider
       value={{
         ...state,
-        getPosts: getPosts
+        getPosts,
+        getPost
       }}
     >
       {props.children}

@@ -1,17 +1,20 @@
 import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Home from "./pages/Home";
 import BlogProvider from "./contexts/blog.provider";
-import PostList from "./components/PostList";
 import "./App.css";
 
 function App() {
   return (
     <BlogProvider>
       <div className="App">
-        <Navbar />
-        <Hero />
-        <PostList />
+        <BrowserRouter>
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+          </Switch>
+        </BrowserRouter>
       </div>
     </BlogProvider>
   );

@@ -71,3 +71,25 @@ a {
   font-weight: 700;
   margin-bottom: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .posts-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    height: 300px;
+    font-size: 44px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .posts-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 300px;
+    font-size: 44px;
+  }
+}

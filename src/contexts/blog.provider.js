@@ -2,10 +2,10 @@ import React, { useReducer } from "react";
 import BlogContext from "./blog.context";
 import blogReducer from "./blog.reducer";
 import {
-  SENDING_REQUEST,
-  REQUEST_FINISHED,
-  SET_POSTS,
-  SET_POST
+  initiateRequest,
+  completeRequest,
+  setPosts,
+  setPostById
 } from "./blog.actions";
 
 const BlogProvider = props => {
@@ -19,11 +19,11 @@ const BlogProvider = props => {
 
   const getPosts = async () => {
     try {
-      dispatch({ type: SENDING_REQUEST });
+      dispatch(initiateRequest());
       const res = await fetch("/posts");
       const data = await res.json();
-      dispatch({ type: REQUEST_FINISHED });
-      dispatch({ type: SET_POSTS, payload: data });
+      dispatch(completeRequest());
+      dispatch(setPosts(data));
     } catch (err) {
       console.log(err);
     }
@@ -31,11 +31,11 @@ const BlogProvider = props => {
 
   const getPost = async id => {
     try {
-      dispatch({ type: SENDING_REQUEST });
+      dispatch(initiateRequest());
       const res = await fetch(`posts/${id}`);
       const data = await res.json();
-      dispatch({ type: SET_POST, payload: data });
-      dispatch({ type: REQUEST_FINISHED });
+      dispatch(completeRequest());
+      dispatch(setPostById(data));
     } catch (err) {
       console.log(err);
     }

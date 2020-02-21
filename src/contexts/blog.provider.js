@@ -16,7 +16,7 @@ const BlogProvider = props => {
     try {
       dispatch({ type: SENDING_REQUEST });
       const res = await fetch("/posts");
-      const data = res.json();
+      const data = await res.json();
       dispatch({ type: REQUEST_FINISHED });
       dispatch({ type: SET_POSTS, payload: data });
     } catch (err) {

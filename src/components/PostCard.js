@@ -12,7 +12,7 @@ const PostCard = ({ title, author, date, id, image }) => {
       ></div>
       <div className="card-info">
         <div className="card-title">
-          <Link to={`/posts/${id}`}>
+          <Link to={`/${id}`}>
             <p>{title}</p>
           </Link>
         </div>

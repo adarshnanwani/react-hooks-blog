@@ -1,9 +1,11 @@
 import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import BlogContext from "../contexts/blog.context";
+import BlogDispatchContext from "../contexts/blogDispatch.context";
 
-const Post = props => {
-  const { getPost, currentBlogPost } = useContext(BlogContext);
+const Post = () => {
+  const { currentBlogPost } = useContext(BlogContext);
+  const { getPost } = useContext(BlogDispatchContext);
 
   let { id } = useParams();
 

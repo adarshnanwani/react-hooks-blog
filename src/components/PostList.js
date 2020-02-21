@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import BlogContext from "../contexts/blog.context";
+import BlogDispatchContext from "../contexts/blogDispatch.context";
 import PostCard from "./PostCard";
 
 const PostList = () => {
-  const { getPosts, blogPosts, loading } = useContext(BlogContext);
+  const { blogPosts, loading } = useContext(BlogContext);
+  const { getPosts } = useContext(BlogDispatchContext);
 
   useEffect(() => {
     getPosts();

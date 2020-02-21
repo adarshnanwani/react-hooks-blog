@@ -1,5 +1,6 @@
-import React, { useReducer } from "react";
+import React, { useReducer, createContext } from "react";
 import BlogContext from "./blog.context";
+import BlogDispatchContext from "./blogDispatch.context";
 import blogReducer from "./blog.reducer";
 import {
   initiateRequest,
@@ -44,12 +45,17 @@ const BlogProvider = props => {
   return (
     <BlogContext.Provider
       value={{
-        ...state,
-        getPosts,
-        getPost
+        ...state
       }}
     >
-      {props.children}
+      <BlogDispatchContext.Provider
+        value={{
+          getPosts,
+          getPost
+        }}
+      >
+        {props.children}
+      </BlogDispatchContext.Provider>
     </BlogContext.Provider>
   );
 };

@@ -11,8 +11,6 @@ const PostList = () => {
     getPosts();
   }, []);
 
-  console.log(blogPosts);
-
   return (
     <div className="posts">
       <div className="container">

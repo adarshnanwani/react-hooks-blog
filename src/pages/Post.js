@@ -5,15 +5,18 @@ import BlogDispatchContext from "../contexts/blogDispatch.context";
 
 const Post = () => {
   const { currentBlogPost } = useContext(BlogContext);
-  const { getPost } = useContext(BlogDispatchContext);
+  const { getPost, resetCurrentPost } = useContext(BlogDispatchContext);
 
   let { id } = useParams();
 
   useEffect(() => {
     getPost(id);
+    //Below code will run before component unmounts
+    return () => {
+      resetCurrentPost();
+    };
   }, [id]);
 
-  console.log(currentBlogPost);
   return (
     <div>
       {currentBlogPost ? (

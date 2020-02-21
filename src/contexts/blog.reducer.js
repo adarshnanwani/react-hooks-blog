@@ -2,7 +2,8 @@ import {
   SENDING_REQUEST,
   REQUEST_FINISHED,
   SET_POSTS,
-  SET_POST
+  SET_POST,
+  RESET_CURRENT_POST
 } from "./blog.actions";
 
 export default function blogReducer(state, action) {
@@ -15,6 +16,8 @@ export default function blogReducer(state, action) {
       return { ...state, blogPosts: action.payload };
     case SET_POST:
       return { ...state, currentBlogPost: action.payload };
+    case RESET_CURRENT_POST:
+      return { ...state, currentBlogPost: null };
     default:
       return state;
   }

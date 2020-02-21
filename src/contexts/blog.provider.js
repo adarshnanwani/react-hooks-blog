@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from "react";
+import React, { useReducer } from "react";
 import BlogContext from "./blog.context";
 import BlogDispatchContext from "./blogDispatch.context";
 import blogReducer from "./blog.reducer";
@@ -6,7 +6,8 @@ import {
   initiateRequest,
   completeRequest,
   setPosts,
-  setPostById
+  setPostById,
+  resetCurrentPost
 } from "./blog.actions";
 
 const BlogProvider = props => {
@@ -51,7 +52,8 @@ const BlogProvider = props => {
       <BlogDispatchContext.Provider
         value={{
           getPosts,
-          getPost
+          getPost,
+          resetCurrentPost: () => dispatch(resetCurrentPost())
         }}
       >
         {props.children}

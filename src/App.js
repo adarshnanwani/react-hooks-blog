@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BlogProvider from "./contexts/blog.provider";
+import PostList from "./components/PostList";
 import "./App.css";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Hero />
+        <PostList />
       </div>
     </BlogProvider>
   );

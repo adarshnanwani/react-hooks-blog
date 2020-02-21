@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "React Post",
+      "title": "React Trees",
       "author": "John Doe",
       "image": "https://images.unsplash.com/photo-1582148453014-b7d4117d3300?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
       "date": "Dec 6, 2019",
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "title": "Ady Nanwani",
+      "title": "Angular Mountains",
       "author": "Jane Doe",
       "image": "https://images.unsplash.com/photo-1582229822017-3b77911e82bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
       "date": "Dec 6, 2019",
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "title": "Some CSS",
+      "title": "CSS Lipsticks",
       "author": "God",
       "image": "https://images.unsplash.com/photo-1562887284-8ba6b7c90fd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
       "date": "Dec 6, 2019",
